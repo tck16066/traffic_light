@@ -24,12 +24,19 @@ signal.signal(signal.SIGINT, sig_handler)
 parser = argparse.ArgumentParser(description='Options for traffic light program')
 parser.add_argument('--udp-port', nargs=1, type=int,
                    help='UDP port to listen on for input. If not specific, use keyboard.')
+parser.add_argument('--joystick', nargs=3, type=int,
+                   help='UDP port to listen on for input. If not specific, use keyboard.')
 
 
 args = parser.parse_args()
 
 
-if args.udp_port == None:
+if args.joystick is not None:
+    print("Using joystick interface.")
+    arg = args.joystick
+    user_input.init_joystick(arg[0], arg[1], arg[2]) #9, 0, 1)
+    x = user_input.joystick_input()
+elif args.udp_port == None:
     x = user_input.stdin_input()
 else:
     x = user_input.udp_input("", args.udp_port[0])

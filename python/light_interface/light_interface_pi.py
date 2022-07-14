@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import RPi.GPIO as GPIO
 
 class light_interface_pi:
@@ -9,7 +11,7 @@ class light_interface_pi:
 
         GPIO.setmode(GPIO.BCM)
         GPIO.setwarnings(False)
-        for x in self.light_hw.values():
+        for x in list(self.light_hw.values()):
             GPIO.setup(x, GPIO.OUT)
             GPIO.output(x, 0)
 

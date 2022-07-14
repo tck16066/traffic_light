@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import socket
 
 class udp_input:
@@ -9,7 +11,7 @@ class udp_input:
         self.sock.settimeout(timeout_sec)
         try:
             data = self.sock.recv(1)
-            print "ktktktktk   " + str(data)
+            print("ktktktktk   " + str(data))
             return data
         except:
             return False

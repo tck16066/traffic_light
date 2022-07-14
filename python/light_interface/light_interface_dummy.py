@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # Dummy class can be used for testing
 
 class light_interface_dummy:
@@ -8,7 +10,7 @@ class light_interface_dummy:
                    }
 
     def light_on(self, config):
-        print "turning on %s" % config['name']
+        print("turning on %s" % config['name'])
 
     def light_off(self, config):
-        print "turning off %s" % config['name']
+        print("turning off %s" % config['name'])

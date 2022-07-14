@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # This will merge the light and audio interfaces.
 
 class hw_interface:
@@ -39,7 +41,7 @@ class hw_interface:
         # TODO audio here too
 
     def hw_all_off(self):
-        for y in self.light_configs.keys():
+        for y in list(self.light_configs.keys()):
             self.hw_light_off(y)
             # TODO audio
 

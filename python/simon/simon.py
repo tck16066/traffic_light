@@ -1,4 +1,4 @@
-#! /usr/bin/python
+#!/usr/bin/env python3
 
 import sched
 import threading
@@ -123,7 +123,7 @@ class simon():
         self.hw_interface.hw_light_on(self.current_playback_item().color_abbrev)
         t = threading.Timer(self.game_loss_light_msec, finish_lose_game)
         t.start()
-        print "LOSER!!!!"
+        print("LOSER!!!!")
 
     #
     # Filter all input while we're in the playback loop.

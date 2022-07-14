@@ -1,4 +1,6 @@
-from sequence import *
+#!/usr/bin/env python3
+
+from .sequence import *
 import unittest
 
 class test_sequence(unittest.TestCase):

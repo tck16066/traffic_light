@@ -1,6 +1,5 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 
-import imp
 import os
 import sys
 import argparse
@@ -16,7 +15,7 @@ import traffic_pattern
 import user_input
 
 def sig_handler(signum, frame):
-    print "Exiting game..."
+    print("Exiting game...")
     os._exit(0)
 
 signal.signal(signal.SIGINT, sig_handler)
@@ -34,7 +33,7 @@ args = parser.parse_args()
 if args.joystick is not None:
     print("Using joystick interface.")
     arg = args.joystick
-    user_input.init_joystick(arg[0], arg[1], arg[2]) #9, 0, 1)
+    user_input.init_joystick(arg[0], arg[1], arg[2])
     x = user_input.joystick_input()
 elif args.udp_port == None:
     x = user_input.stdin_input()
@@ -44,15 +43,15 @@ else:
 seq_iface = sequence_interface()
 
 try:
-    print "Using light_interface_pi"
+    print("Using light_interface_pi")
     li = light_interface_pi()
 except:
-    print "Couldn't find light_interface_pi, using light_interface_dummy"
+    print("Couldn't find light_interface_pi, using light_interface_dummy")
     li = light_interface_dummy()
 
 hw = hw_interface(li)
 
-s = simon(hw, seq_iface)
+s = simon.simon(hw, seq_iface)
 t = traffic_pattern.traffic_pattern_game(hw)
 
 games = [t, s]

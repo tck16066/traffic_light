@@ -1,4 +1,5 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
+
 import sys
 from select import select
 

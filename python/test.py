@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 
 #handles input from stdin
 
@@ -11,7 +11,7 @@ read_timeout = 10
 rlist, _, _ = select([sys.stdin], [], [], read_timeout)
 if rlist:
     s = sys.stdin.readline()
-    print s
+    print(s)
 else:
-    print "No input. Moving on..."
+    print("No input. Moving on...")
 

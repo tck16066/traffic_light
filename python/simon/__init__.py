@@ -1,5 +1,3 @@
-#! /usr/bin/python
-
-from simon import *
+#!/usr/bin/env python3
 
 __all__ = ['simon']

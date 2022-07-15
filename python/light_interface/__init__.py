@@ -7,8 +7,8 @@ __all__ = ['light_interface_dummy']
 
 f = open('/proc/cpuinfo', 'r')
 dat = f.read()
-if 'BCM2708' in dat or 'BCM2709' in dat:
-    print("found BCM2708 or BCM2709")
+if 'BCM2708' in dat or 'BCM2709' in dat or 'BCM2835' in dat:
+    print("found BCM2708 or BCM2709 or BCM2835")
     from .light_interface_pi import *
     __all__.append('light_interface_pi')
     print(__all__)
